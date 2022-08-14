@@ -19,4 +19,4 @@ taller_main:
 	$(GCC) $(FLAGS) -o $@ $@.o taller_lib.o $(MATHFLAGS)
 
 clean: 
-	$(RM) *.o
+	$(RM) *.o $(PROGRS)

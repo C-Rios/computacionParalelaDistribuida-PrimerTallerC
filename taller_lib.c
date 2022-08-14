@@ -220,16 +220,23 @@ void decimoPunto(){
 	matrixPrinting(mSize,matrix);
 	printf("Matriz #2:\n");
 	matrixPrinting(mSize,matrix2);
+	int columnSum = 0;
 	for (int i = 0; i < mSize; ++i)
 	{
 		for (int j = 0; j < mSize; ++j)
 		{
-			finalMatrix[i][j] = matrix[i][j]*matrix2[i][j];
+			columnSum = 0;
+			for (int k = 0; k < mSize; k++)
+			{
+				columnSum+= matrix[i][k] * matrix2[k][j];
+			}
+			finalMatrix[i][j] = columnSum;
+			
 		}
 	}
 	printf("Matriz #1 * Matriz #2 =\n");
 	matrixPrinting(mSize,finalMatrix);
-}
+}	
 
 void menu(){
 	int opc=0;
